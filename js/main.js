@@ -91,4 +91,33 @@
     });
     
 })(jQuery);
+$(document).ready(function() {
+    // Load the JSON data
+    $.getJSON('destinations.json', function(data) {
+        // Add click event listeners to images
+        $('.destination .row a').each(function(index) {
+            $(this).click(function(event) {
+                event.preventDefault();
+                const destination = data[index];
+
+
+
+                // Update the hover window with data from JSON
+                $('#attraction-img').attr('src', destination.image);
+                $('#hover-name').text(destination.name);
+                $('#hover-region').text(destination.region);
+                $('#hover-attraction').text(destination.attraction);
+                $('#hover-more-info').text(destination.more_info);
+
+                // Show the hover window
+                $('.hover-window').removeClass('hidden');
+            });
+        });
+    });
+
+    $("#hide").click(() => {
+        $('.hover-window').addClass('hidden');
+    });
+});
+
 
