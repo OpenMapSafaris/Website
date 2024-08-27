@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Lamu",
+        "region": "Coastal",
+        "attraction": "Lamu Island",
+        "more_info": "Lamu is a UNESCO World Heritage site known for its well-preserved Swahili architecture.",
+        "image": "img/lamu-island.webp"
+    },
+    {
+        "name": "Watamu",
+        "region": "Coastal",
+        "attraction": "Watamu Beach",
+        "more_info": "Watamu is famous for its marine parks and beautiful coral reefs.",
+        "image": "img/watamu.jfif"
+    },
+    {
+        "name": "Amboseli",
+        "region": "Rift Valley",
+        "attraction": "Amboseli National Park",
+        "more_info": "Amboseli is renowned for its large elephant herds and views of Mount Kilimanjaro.",
+        "image": "img/Amboseli National Park.jpg"
+    },
+    {
+        "name": "Mombasa",
+        "region": "Coastal",
+        "attraction": "Mombasa Beaches",
+        "more_info": "Mombasa offers a variety of beaches and rich cultural heritage.",
+        "image": "img/mombasa locations.jfif"
+    },
+    {
+        "name": "Diani",
+        "region": "Coastal",
+        "attraction": "Diani Beach",
+        "more_info": "Diani is known for its pristine white sand beaches and vibrant nightlife.",
+        "image": "img/diani.jfif"
+    },
+    {
+        "name": "Mara",
+        "region": "Rift Valley",
+        "attraction": "Maasai Mara",
+        "more_info": "Maasai Mara is famous for its annual wildebeest migration and diverse wildlife.",
+        "image": "img/safari-kenya.jpg"
+    }
+]
