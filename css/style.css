@@ -1,6 +1,7 @@
 /********** Template CSS **********/
 :root {
     --primary: #916812;
+    --primary_light_bg: rgba(255, 255, 255, 0.918);
     --secondary: #FE8800;
     --light: #F5F5F5;
     --dark: #14141F;
@@ -330,12 +331,14 @@
     .testimonial-carousel::after {
         width: 200px;
     }
+
 }
 
 @media (min-width: 992px) {
     .testimonial-carousel::before,
     .testimonial-carousel::after {
         width: 300px;
+        justify-content: center;
     }
 }
 
@@ -462,4 +465,70 @@
 }
 .border-safari {
     border: 2px solid var(--primary);
+}
+
+.hover-window {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.hover-content {
+    height: 95%;
+    margin: 5px;
+    color: rgba(0, 0, 0, 0.74);
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hover-image img {
+    min-width: 60vw;
+    min-height: 50vw;
+    margin: 5px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.opaque {
+    color: black;
+    opacity: 100%;
+}
+.opacity30 {
+    opacity: 30%;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .hover-window {
+        padding: 20px 30px;
+        font-size: 1rem;
+        height: 100vh;
+        flex-direction: column;
+    }
+    .hover-content {
+        overflow: scroll;
+        padding: 10px;
+        max-height: 60vh;
+        margin: 0;
+    }
+    .hover-image img {
+        min-width: 84vw;
+        max-height: 30vh;
+        margin: 5px auto;
+        max-width: 100%;
+        border-radius: 10px;
+    }
 }
