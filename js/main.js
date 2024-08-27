@@ -92,7 +92,8 @@
     
 })(jQuery);
 $(document).ready(function() {
-    // Load the JSON data
+    let slideIndex = 0;
+    
     $.getJSON('destinations.json', function(data) {
         // Add click event listeners to images
         $('.destination .row a').each(function(index) {
@@ -100,24 +101,45 @@ $(document).ready(function() {
                 event.preventDefault();
                 const destination = data[index];
 
+                $('#slideshow').empty();
 
+                // Populate slideshow with images
+                destination.images.forEach(function(image, i) {
+                    $('#slideshow').append('<img src="' + image + '" class="slide" alt="Attraction Image ' + (i + 1) + '">');
+                });
+
+                slideIndex = 0;
+                showSlides(slideIndex);
+
+                // Show the hover window
+                $('.hover-window').removeClass('hidden');
 
                 // Update the hover window with data from JSON
-                $('#attraction-img').attr('src', destination.image);
                 $('#hover-name').text(destination.name);
                 $('#hover-region').text(destination.region);
                 $('#hover-attraction').text(destination.attraction);
                 $('#hover-more-info').text(destination.more_info);
-
-                // Show the hover window
-                $('.hover-window').removeClass('hidden');
             });
         });
+    });
+
+    function showSlides(index) {
+        const slides = $('.slide');
+        slides.hide(); // Hide all slides
+        slides.eq(index).show(); // Show the selected slide
+    }
+
+    $('#prev-slide').click(function() {
+        slideIndex = (slideIndex > 0) ? slideIndex - 1 : $('.slide').length - 1;
+        showSlides(slideIndex);
+    });
+
+    $('#next-slide').click(function() {
+        slideIndex = (slideIndex < $('.slide').length - 1) ? slideIndex + 1 : 0;
+        showSlides(slideIndex);
     });
 
     $("#hide").click(() => {
         $('.hover-window').addClass('hidden');
     });
 });
-
-
